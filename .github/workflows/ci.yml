@@ -26,14 +26,14 @@ jobs:
           node-version: ${{ matrix.node-version }}
           
       - name: Install dependencies for backend
-        run: npm install
+        run: sudo npm install
         
       - name: Install dependencies for frontend
-        run: npm --prefix /frontend install
+        run: sudo npm --prefix /frontend install
 
       - name: Run the tests for frontend
-        run: npm --prefix /frontend test
+        run: sudo npm --prefix /frontend test
         
       - name: Build the frontend
-        run: npm --prefix /frontend run build
+        run: sudo npm --prefix /frontend run build
   
