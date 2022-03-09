@@ -33,7 +33,7 @@ jobs:
         working-directory: ./frontend
 
       - name: Run the tests for frontend
-        run: sudo npm test
+        run: sudo npm test a --watchAll=false
         working-directory: ./frontend
         
       - name: Build the frontend
