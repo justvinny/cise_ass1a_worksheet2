@@ -29,11 +29,14 @@ jobs:
         run: sudo npm install
         
       - name: Install dependencies for frontend
-        run: sudo npm --prefix /frontend install
+        run: sudo npm install
+        working-directory: ./frontend
 
       - name: Run the tests for frontend
-        run: sudo npm --prefix /frontend test
+        run: sudo npm test
+        working-directory: ./frontend
         
       - name: Build the frontend
-        run: sudo npm --prefix /frontend run build
+        run: sudo npm run build
+        working-directory: ./frontend
   
