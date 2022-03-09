@@ -25,12 +25,15 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           
-      - name: Install dependencies
+      - name: Install dependencies for backend
         run: npm install
         
-      - name: Run the tests
-        run: npm test
+      - name: Install dependencies for frontend
+        run: npm --prefix /frontend install
+
+      - name: Run the tests for frontend
+        run: npm --prefix /frontend test
         
-      - name: Build
-        run: npm run build
+      - name: Build the frontend
+        run: npm --prefix /frontend run build
   
